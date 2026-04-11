@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    background-color: #222;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ccc;
+    padding: 7px 16px;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+nav a:hover {
+    background-color: #444;
+    color: white;
+}
+
+nav a.ativo {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* ===== CONTEUDO ===== */
+main {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 8px;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 14px;
+    color: #444;
+}
+
+/* ===== CARDS ===== */
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 18px;
+    width: 280px;
+}
+
+.card h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+/* ===== TABELA ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 0.95em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* ===== BOTOES ===== */
+.btn {
+    display: inline-block;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95em;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.btn-cinza {
+    background-color: #888;
+}
+
+.btn-cinza:hover {
+    background-color: #666;
+}
+
+.btn-vermelho {
+    background-color: #d9534f;
+}
+
+.btn-vermelho:hover {
+    background-color: #c9302c;
+}
+
+/* ===== FORMULARIO ===== */
+fieldset {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1em;
+    color: #333;
+    padding: 0 6px;
+}
+
+form p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+form label {
+    min-width: 160px;
+    font-size: 0.95em;
+    color: #444;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="tel"],
+form input[type="password"],
+form input[type="email"],
+form select,
+form textarea {
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95em;
+    width: 260px;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+form textarea {
+    width: 260px;
+    resize: vertical;
+}
+
+.botoes-form {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+}
+
+/* ===== LOGIN ===== */
+.login-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 30px;
+    width: 360px;
+    margin: 80px auto;
+}
+
+.login-box .logo-login {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.login-box .logo-login img {
+    width: 100px;
+}
+
+.login-box .logo-login h2 {
+    margin-top: 10px;
+    font-size: 1.3em;
+    color: #222;
+}
+
+/* ===== PAGINA INICIO ===== */
+.inicio-hero {
+    text-align: center;
+    padding: 50px 20px 30px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+
+.inicio-hero img {
+    width: 160px;
+    margin-bottom: 14px;
+}
+
+.inicio-hero h1 {
+    border: none;
+    padding: 0;
+    font-size: 2em;
+    margin-bottom: 8px;
+}
+
+.inicio-hero p {
+    color: #666;
+    margin-bottom: 24px;
+    font-size: 0.95em;
+}
+
+.inicio-hero .botoes-inicio {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+/* ===== DETALHES BRINQUEDO ===== */
+.detalhe-container {
+    display: flex;
+    gap: 30px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.detalhe-container img {
+    width: 280px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.detalhe-info h2 {
+    font-size: 1.3em;
+    margin-bottom: 14px;
+    color: #222;
+}
+
+.detalhe-info p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.detalhe-info p strong {
+    color: #333;
+}
+
+/* ===== RESUMO ===== */
+.resumo-total {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin-top: 20px;
+    width: fit-content;
+}
+
+.resumo-total p {
+    font-size: 0.95em;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.resumo-total .total {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-top: 10px;
+}
+
+/* ===== BADGE STATUS ===== */
+.status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+.status-confirmado {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-pendente {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-cancelado {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.diminuir-brinquedo{
+    width: 300px; 
+    height: auto;  
+}
