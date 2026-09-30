@@ -1,0 +1,22 @@
+{
+  "name": "prototip-ruan-fest-past",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prototip-ruan-fest.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^10.5.0",
+    "prettier": "^3.8.4"
+  }
+}

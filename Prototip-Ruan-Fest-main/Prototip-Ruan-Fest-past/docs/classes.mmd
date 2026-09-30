@@ -1,0 +1,105 @@
+classDiagram
+    direction LR
+    class Usuario {
+        +int id
+        +String nome
+        +String email
+        -String senhaHash
+        +Perfil perfil
+        +autenticar(senha) bool
+    }
+    class Cliente {
+        +int id
+        +String nome
+        +TipoCliente tipo
+        +String documento
+        +String telefone
+        +String email
+    }
+    class Escola {
+        +int id
+        +String nome
+        +bool ativa
+    }
+    class Localidade {
+        +int id
+        +String nome
+        +TipoEspaco tipoEspaco
+        +bool exigeTransporteTerceiros
+    }
+    class Brinquedo {
+        +int id
+        +String nome
+        +String descricao
+        +bool ativo
+        +precoPara(duracaoHoras) Decimal
+    }
+    class PrecoBrinquedo {
+        +int duracaoHoras
+        +Decimal valor
+    }
+    class ServicoExtra {
+        +int id
+        +String nome
+        +String quantidadeOuTempo
+        +Decimal valor
+        +bool ativo
+    }
+    class Orcamento {
+        +int id
+        +String numero
+        +String titulo
+        +Date dataEmissao
+        +StatusOrcamento status
+        +String observacoes
+        +subtotalBrinquedos() Decimal
+        +totalDeslocamento() Decimal
+        +totalGeral() Decimal
+        +totalPorEscola(escola) Decimal
+    }
+    class Deslocamento {
+        +int id
+        +Date data
+        +String descricao
+        +String prestador
+        +Decimal valor
+    }
+    class Locacao {
+        +int id
+        +Date dataEvento
+        +Turno turno
+        +Time horarioInicio
+        +int qtdAlunos
+        +int duracaoHoras
+        +adicionarItem(item)
+        +subtotal() Decimal
+    }
+    class ItemLocacao {
+        +int id
+        +int quantidade
+        +Decimal valorUnitario
+        +total() Decimal
+    }
+    class Perfil { <<enumeration>> ADMIN OPERADOR }
+    class TipoCliente { <<enumeration>> PREFEITURA EMPRESA PARTICULAR }
+    class TipoEspaco { <<enumeration>> QUADRA GINASIO ESCOLA OUTRO }
+    class StatusOrcamento { <<enumeration>> RASCUNHO ENVIADO APROVADO RECUSADO }
+    class Turno { <<enumeration>> MANHA TARDE NOITE }
+
+    Cliente "1" --> "0..*" Orcamento : solicita
+    Usuario "0..1" --> "0..*" Orcamento : elabora
+    Orcamento "1" *-- "1..*" Locacao : contem
+    Orcamento "1" *-- "0..*" Deslocamento : possui
+    Locacao "0..*" --> "1" Escola : recebe
+    Locacao "0..*" --> "1" Localidade : acontece em
+    Deslocamento "0..*" --> "1" Localidade : destino
+    Locacao "0..*" --> "0..1" Deslocamento : atendida por
+    Locacao "1" *-- "1..*" ItemLocacao : inclui
+    ItemLocacao "0..*" --> "0..1" Brinquedo : brinquedo
+    ItemLocacao "0..*" --> "0..1" ServicoExtra : servico
+    Brinquedo "1" *-- "1..*" PrecoBrinquedo : precos
+    Usuario ..> Perfil
+    Cliente ..> TipoCliente
+    Localidade ..> TipoEspaco
+    Orcamento ..> StatusOrcamento
+    Locacao ..> Turno

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Ruan Fest</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- barra de navegação -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="brinquedos.html">Brinquedos</a>
+        <a href="agendamento.html" class="ativo">Agendamento</a>
+        <a href="resumo.html">Resumo</a>
+    </nav>
+
+    <main>
+
+        <h1>Agendamento</h1>
+
+        <div class="card" style="max-width: 480px;">
+
+            <p>
+                <label for="ibrinquedo">Brinquedo:</label><br><br>
+                <select id="ibrinquedo">
+                    <option value="">Selecione o brinquedo</option>
+                    <option value="grande">Pula-Pula Grande (4,27m)</option>
+                    <option value="pequeno">Pula-Pula Pequeno (2,50m)</option>
+                </select>
+            </p>
+
+            <br>
+
+            <p>
+                <label for="iendereco">Endereço:</label><br><br>
+                <input type="text" id="iendereco" placeholder="Digite seu endereço">
+            </p>
+
+            <br>
+
+            <p>
+                <label for="icontato">Contato:</label><br><br>
+                <input type="text" id="icontato" placeholder="Telefone">
+            </p>
+
+            <br>
+
+            <p>
+                <label for="idata">Data do evento:</label><br><br>
+                <input type="date" id="idata">
+            </p>
+
+            <br>
+
+            <!-- chama a função do JS ao clicar, sem redirecionar direto -->
+            <button onclick="salvarAgendamento()">Confirmar Agendamento</button>
+
+        </div>
+
+    </main>
+
+    <script src="prototip-ruan-fest.js"></script>
+
+</body>
+</html>

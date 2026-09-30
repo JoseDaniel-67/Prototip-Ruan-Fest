@@ -1,0 +1,63 @@
+erDiagram
+    CLIENTE ||--o{ ORCAMENTO : solicita
+    USUARIO |o--o{ ORCAMENTO : elabora
+    ORCAMENTO ||--|{ LOCACAO : contem
+    ORCAMENTO ||--o{ DESLOCAMENTO : possui
+    ESCOLA ||--o{ LOCACAO : recebe
+    LOCALIDADE ||--o{ LOCACAO : sedia
+    LOCALIDADE ||--o{ DESLOCAMENTO : destino
+    DESLOCAMENTO |o--o{ LOCACAO : atende
+    LOCACAO ||--|{ ITEM_LOCACAO : inclui
+    BRINQUEDO |o--o{ ITEM_LOCACAO : "e locado em"
+    SERVICO_EXTRA |o--o{ ITEM_LOCACAO : "e contratado em"
+    BRINQUEDO ||--|{ PRECO_BRINQUEDO : "tem preco por duracao"
+
+    CLIENTE { int id PK
+      string nome
+      string tipo
+      string documento UK }
+    USUARIO { int id PK
+      string nome
+      string email UK
+      string perfil }
+    ORCAMENTO { int id PK
+      string numero UK
+      int cliente_id FK
+      int usuario_id FK
+      date data_emissao
+      string status }
+    ESCOLA { int id PK
+      string nome UK }
+    LOCALIDADE { int id PK
+      string nome UK
+      string tipo_espaco
+      bool exige_transporte_terceiros }
+    DESLOCAMENTO { int id PK
+      int orcamento_id FK
+      int localidade_id FK
+      date data_deslocamento
+      decimal valor "NULL = a informar" }
+    LOCACAO { int id PK
+      int orcamento_id FK
+      int escola_id FK
+      int localidade_id FK
+      int deslocamento_id FK
+      date data_evento
+      string turno
+      int qtd_alunos
+      int duracao_horas }
+    ITEM_LOCACAO { int id PK
+      int locacao_id FK
+      int brinquedo_id FK
+      int servico_id FK
+      int quantidade
+      decimal valor_unitario }
+    BRINQUEDO { int id PK
+      string nome UK }
+    PRECO_BRINQUEDO { int id PK
+      int brinquedo_id FK
+      int duracao_horas
+      decimal valor }
+    SERVICO_EXTRA { int id PK
+      string nome UK
+      decimal valor }
