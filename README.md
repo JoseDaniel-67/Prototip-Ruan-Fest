@@ -14,18 +14,18 @@ Protótipo do site da **Ruan Fest – Locação de Brinquedos**. O sistema organ
 ## Estrutura do repositório
 ```
 Prototip-Ruan-Fest/
-├── Prototip-Ruan-Fest-past/     # código do protótipo (HTML, CSS, JS)
-├── api/                          # backend Node.js + Express + Sequelize (Etapa 3)
-│   └── README.md                # instalação, rotas e regras de negócio implementadas
-├── docs/
-│   ├── modelagem.md             # MER + diagrama de classes
-│   ├── dicionario-de-dados.md   # tabelas, campos, tipos e constraints
-│   ├── schema.sql               # criação do banco (PostgreSQL)
-│   ├── schema.dbml              # MER editável no dbdiagram.io
-│   ├── seed_catalogo.sql        # preços, brinquedos, serviços e localidades
-│   ├── seed_exemplo.sql         # orçamento de exemplo (Dia das Crianças)
-│   └── img/                     # mer.png, diagrama-classes.png
-└── README.md
+ Prototip-Ruan-Fest-past/     # código do protótipo (HTML, CSS, JS)
+ api/                          # backend Node.js + Express + Sequelize (Etapa 3)
+    README.md                # instalação, rotas e regras de negócio implementadas
+ docs/
+    modelagem.md             # MER + diagrama de classes
+    dicionario-de-dados.md   # tabelas, campos, tipos e constraints
+    schema.sql               # criação do banco (PostgreSQL)
+    schema.dbml              # MER editável no dbdiagram.io
+    seed_catalogo.sql        # preços, brinquedos, serviços e localidades
+    seed_exemplo.sql         # orçamento de exemplo (Dia das Crianças)
+    img/                     # mer.png, diagrama-classes.png
+ README.md
 ```
 
 ## Instalação
